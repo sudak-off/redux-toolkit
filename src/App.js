@@ -29,10 +29,6 @@ function App() {
 		// );
 	};
 
-	const removeTodo = (todoId) => {
-		// setTodos(todos.filter((todo) => todo.id !== todoId));
-	};
-
 	return (
 		<div className="App">
 			<InputField text={text} handleInput={setText} handleSubmit={AddTask} />
