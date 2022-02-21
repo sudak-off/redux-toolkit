@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addTodo, fetchTodos } from "./store/todoSlice";
+import { addNewTodo, fetchTodos } from "./store/todoSlice";
 import "./App.css";
 import { InputField } from "./components/InputField";
 import { TodoList } from "./components/TodoList";
@@ -12,7 +12,7 @@ function App() {
 	const dispatch = useDispatch();
 
 	const AddTask = () => {
-		dispatch(addTodo({ text }));
+		dispatch(addNewTodo(text));
 		setText("");
 	};
 
@@ -27,7 +27,7 @@ function App() {
 			{status === "loading" && <h2>Loading...</h2>}
 			{error && <h2>An error occured: {error}</h2>}
 
-			<TodoList text={text} />
+			<TodoList />
 		</div>
 	);
 }
